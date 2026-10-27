@@ -1,0 +1,338 @@
+<!-- Genetic Disorders Interactive Learning Module | Blogger-ready -->
+<div id="genetics-learning-module">
+  <style>
+    #genetics-learning-module{--gl-ink:#172033;--gl-muted:#566176;--gl-line:#d9e1ec;--gl-bg:#f5f8fc;--gl-card:#fff;--gl-blue:#1d4ed8;--gl-teal:#0f766e;--gl-purple:#6d28d9;color:var(--gl-ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;max-width:1050px;margin:0 auto;overflow-wrap:anywhere}
+    #genetics-learning-module *{box-sizing:border-box}
+    #genetics-learning-module .gl-hero{background:linear-gradient(135deg,#142c59,#2458a6);color:#fff;padding:clamp(22px,5vw,42px);border-radius:18px;margin:0 0 22px}
+    #genetics-learning-module .gl-kicker{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;opacity:.88}
+    #genetics-learning-module h1{font-size:clamp(1.8rem,5vw,2.65rem);line-height:1.15;margin:.45rem 0 .8rem;color:inherit}
+    #genetics-learning-module h2{font-size:clamp(1.35rem,3vw,1.8rem);line-height:1.25;margin:0 0 14px}
+    #genetics-learning-module h3{font-size:1.12rem;line-height:1.35;margin:.15rem 0 .5rem}
+    #genetics-learning-module p{margin:.45rem 0 .8rem}
+    #genetics-learning-module .gl-subtitle{font-size:1.05rem;max-width:760px;opacity:.96}
+    #genetics-learning-module .gl-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+    #genetics-learning-module .gl-pill{border:1px solid #ffffff70;border-radius:999px;padding:5px 11px;font-size:.84rem}
+    #genetics-learning-module .gl-section{margin:28px 0}
+    #genetics-learning-module .gl-intro{color:var(--gl-muted);margin-top:-4px}
+    #genetics-learning-module .gl-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    #genetics-learning-module .gl-grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    #genetics-learning-module .gl-card{background:var(--gl-card);border:1px solid var(--gl-line);border-radius:14px;padding:17px;min-width:0}
+    #genetics-learning-module .gl-card p:last-child{margin-bottom:0}
+    #genetics-learning-module .gl-label{display:inline-block;font-size:.76rem;letter-spacing:.04em;text-transform:uppercase;font-weight:800;color:var(--gl-teal);margin-bottom:5px}
+    #genetics-learning-module .gl-callout{background:#eef6ff;border-left:4px solid var(--gl-blue);border-radius:8px;padding:14px 16px;margin:14px 0}
+    #genetics-learning-module .gl-table-wrap{overflow-x:auto;border:1px solid var(--gl-line);border-radius:12px;background:#fff}
+    #genetics-learning-module table{border-collapse:collapse;width:100%;min-width:590px}
+    #genetics-learning-module th,#genetics-learning-module td{padding:11px 13px;text-align:left;vertical-align:top;border-bottom:1px solid var(--gl-line)}
+    #genetics-learning-module th{background:#edf2f9;font-size:.9rem}
+    #genetics-learning-module tr:last-child td{border-bottom:0}
+    #genetics-learning-module .gl-flow{display:flex;flex-direction:column;align-items:center;gap:9px}
+    #genetics-learning-module .gl-node{width:min(100%,460px);padding:12px 15px;border:1px solid #bfd0e7;border-radius:11px;text-align:center;background:#f5f8ff}
+    #genetics-learning-module .gl-arrow{font-size:1.4rem;line-height:1;color:var(--gl-blue)}
+    #genetics-learning-module .gl-branches{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:100%}
+    #genetics-learning-module .gl-branch{border:1px solid var(--gl-line);border-radius:11px;padding:13px;background:#fff;text-align:center}
+    #genetics-learning-module .gl-genotypes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    #genetics-learning-module .gl-genotype{border-radius:12px;padding:14px;text-align:center;border:1px solid var(--gl-line);background:#fff}
+    #genetics-learning-module .gl-genotype strong{display:block;font-size:1.4rem;color:var(--gl-purple)}
+    #genetics-learning-module .gl-memory{display:flex;gap:13px;align-items:flex-start}
+    #genetics-learning-module .gl-letter{flex:0 0 43px;height:43px;border-radius:12px;background:#e6efff;color:#1d4ed8;font-weight:900;display:grid;place-items:center;font-size:1.15rem}
+    #genetics-learning-module .gl-btn{appearance:none;border:0;border-radius:9px;background:var(--gl-blue);color:white;padding:11px 16px;font-weight:750;font-size:.96rem;cursor:pointer;line-height:1.3}
+    #genetics-learning-module .gl-btn:hover{filter:brightness(.93)}
+    #genetics-learning-module .gl-btn:focus-visible,#genetics-learning-module input:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}
+    #genetics-learning-module .gl-btn-secondary{background:#e8eef8;color:#18325b}
+    #genetics-learning-module .gl-quiz{background:#f5f8fc;border:1px solid var(--gl-line);border-radius:16px;padding:clamp(14px,3vw,24px)}
+    #genetics-learning-module .gl-progress-shell{height:8px;border-radius:99px;background:#dce4f0;overflow:hidden;margin:12px 0 18px}
+    #genetics-learning-module .gl-progress{height:100%;width:0;background:var(--gl-teal);transition:width .2s}
+    #genetics-learning-module .gl-question{background:#fff;border:1px solid var(--gl-line);border-radius:13px;padding:17px;margin:14px 0}
+    #genetics-learning-module .gl-qhead{font-weight:800;margin-bottom:9px}
+    #genetics-learning-module .gl-option{display:flex;gap:9px;align-items:flex-start;padding:9px 10px;border-radius:8px;margin:4px 0;cursor:pointer}
+    #genetics-learning-module .gl-option:hover{background:#f2f6fc}
+    #genetics-learning-module .gl-option input{margin-top:6px;accent-color:var(--gl-blue);flex:0 0 auto}
+    #genetics-learning-module .gl-feedback{display:none;border-radius:9px;padding:11px 13px;margin-top:10px;font-size:.94rem}
+    #genetics-learning-module .gl-feedback.gl-show{display:block}
+    #genetics-learning-module .gl-feedback.gl-good{background:#e8f7ef;color:#14532d;border:1px solid #a7dfbd}
+    #genetics-learning-module .gl-feedback.gl-bad{background:#fff0ed;color:#8a2416;border:1px solid #f2b8ae}
+    #genetics-learning-module .gl-result{display:none;background:#fff;border:2px solid #b7c9e5;border-radius:13px;padding:18px;margin-top:16px}
+    #genetics-learning-module .gl-result.gl-show{display:block}
+    #genetics-learning-module .gl-score{font-size:2rem;font-weight:900;color:var(--gl-blue)}
+    #genetics-learning-module .gl-small{font-size:.88rem;color:var(--gl-muted)}
+    #genetics-learning-module .gl-checklist{padding-left:1.2rem}
+    #genetics-learning-module .gl-checklist li{margin:.35rem 0}
+    #genetics-learning-module .gl-disclaimer{font-size:.88rem;color:var(--gl-muted);border-top:1px solid var(--gl-line);padding-top:14px;margin-top:28px}
+    @media(max-width:680px){#genetics-learning-module .gl-grid,#genetics-learning-module .gl-grid-3{grid-template-columns:1fr}#genetics-learning-module .gl-branches{grid-template-columns:1fr}#genetics-learning-module .gl-hero{border-radius:12px}#genetics-learning-module .gl-card{padding:14px}#genetics-learning-module .gl-genotypes{gap:7px}}
+    @media(prefers-reduced-motion:reduce){#genetics-learning-module .gl-progress{transition:none}}
+  </style>
+
+  <header class="gl-hero">
+    <div class="gl-kicker">Biology • Secondary stage • Exam revision</div>
+    <h1>Common Genetic Disorders in Humans</h1>
+    <p class="gl-subtitle">An interactive learning module with simplified notes, comparison tables, inheritance diagrams, memory aids and a self-checking quiz.</p>
+    <div class="gl-pills"><span class="gl-pill">8-mark answer preparation</span><span class="gl-pill">6 disorders</span><span class="gl-pill">10-question quiz</span></div>
+  </header>
+
+  <section class="gl-section">
+    <h2>Learning objectives</h2>
+    <div class="gl-card">
+      <ul class="gl-checklist">
+        <li>Define genetic disorders and distinguish gene disorders from chromosomal disorders.</li>
+        <li>Describe the causes, inheritance patterns and major features of six common disorders.</li>
+        <li>Interpret simplified autosomal recessive and X-linked recessive inheritance diagrams.</li>
+        <li>Prepare a clear, scientifically accurate answer for a long-answer examination question.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="gl-section">
+    <h2>1. What is a genetic disorder?</h2>
+    <p>A genetic disorder is a condition associated with a change in genetic material that affects normal body function. Changes may involve a single gene, several genes or chromosomes. Some are inherited; others arise from new genetic changes.</p>
+    <div class="gl-grid">
+      <article class="gl-card"><span class="gl-label">Gene disorders</span><h3>Changes in one gene</h3><p>Examples include sickle-cell disease, many forms of thalassaemia, cystic fibrosis and phenylketonuria.</p></article>
+      <article class="gl-card"><span class="gl-label">Chromosomal disorders</span><h3>Changes in chromosome number or structure</h3><p>Examples include Down syndrome (trisomy 21) and Turner syndrome (45,X).</p></article>
+    </div>
+    <div class="gl-callout"><strong>Remember:</strong> The six conditions in this lesson are primarily single-gene disorders. Chromosomal disorders form a separate category.</div>
+  </section>
+
+  <section class="gl-section">
+    <h2>2. Explore the six disorders</h2>
+    <p class="gl-intro">Use each card to revise the cause, inheritance and key exam facts.</p>
+    <div class="gl-grid">
+      <article class="gl-card"><span class="gl-label">01 • Blood clotting</span><h3>Haemophilia</h3><p><strong>Cause:</strong> Deficiency or dysfunction of a clotting factor.</p><p><strong>Inheritance:</strong> Haemophilia A and B are usually X-linked recessive. Haemophilia C is generally autosomal.</p><p><strong>Exam facts:</strong> A = factor VIII; B = factor IX; C = factor XI. Symptoms may include prolonged bleeding, bruising and bleeding into joints.</p></article>
+      <article class="gl-card"><span class="gl-label">02 • Red blood cells</span><h3>Sickle-cell disease</h3><p><strong>Cause:</strong> A variant in the HBB gene on chromosome 11 produces haemoglobin S.</p><p><strong>Inheritance:</strong> Autosomal recessive.</p><p><strong>Exam facts:</strong> Glutamic acid is replaced by valine at position 6 of the mature beta-globin chain. Red cells may become sickle-shaped, causing anaemia, pain and blocked blood vessels.</p></article>
+      <article class="gl-card"><span class="gl-label">03 • Metabolism</span><h3>Phenylketonuria (PKU)</h3><p><strong>Cause:</strong> Usually deficiency of phenylalanine hydroxylase due to variants in the PAH gene on chromosome 12.</p><p><strong>Inheritance:</strong> Autosomal recessive.</p><p><strong>Exam facts:</strong> Phenylalanine accumulates if untreated and can harm brain development. Newborn screening and appropriate dietary management are important.</p></article>
+      <article class="gl-card"><span class="gl-label">04 • Vision</span><h3>Colour vision deficiency</h3><p><strong>Cause:</strong> Changes in cone photopigments or cone function affect colour discrimination.</p><p><strong>Inheritance:</strong> Common red-green forms are usually X-linked recessive; other types can have different genetic causes.</p><p><strong>Exam facts:</strong> Protan affects red perception; deutan affects green perception; tritan affects blue-yellow discrimination. Ishihara plates screen mainly for red-green deficiency.</p></article>
+      <article class="gl-card"><span class="gl-label">05 • Haemoglobin</span><h3>Thalassaemia</h3><p><strong>Cause:</strong> Reduced or absent production of alpha- or beta-globin chains.</p><p><strong>Inheritance:</strong> Usually autosomal recessive.</p><p><strong>Exam facts:</strong> Alpha-globin genes are on chromosome 16; the beta-globin gene cluster is on chromosome 11. Severity ranges from mild to severe anaemia.</p></article>
+      <article class="gl-card"><span class="gl-label">06 • Cell transport</span><h3>Cystic fibrosis</h3><p><strong>Cause:</strong> Variants in the CFTR gene on chromosome 7 affect chloride and bicarbonate transport.</p><p><strong>Inheritance:</strong> Autosomal recessive.</p><p><strong>Exam facts:</strong> Thick, sticky secretions can affect the lungs and pancreas. Elevated sweat chloride is an important diagnostic finding.</p></article>
+    </div>
+  </section>
+
+  <section class="gl-section">
+    <h2>3. Comparison table</h2>
+    <div class="gl-table-wrap">
+      <table>
+        <thead><tr><th>Disorder</th><th>Main cause</th><th>Inheritance pattern</th><th>Key feature</th></tr></thead>
+        <tbody>
+          <tr><td>Haemophilia A/B</td><td>Clotting factor VIII/IX deficiency</td><td>X-linked recessive</td><td>Impaired blood clotting</td></tr>
+          <tr><td>Sickle-cell disease</td><td>HBB variant; haemoglobin S</td><td>Autosomal recessive</td><td>Sickling of red blood cells</td></tr>
+          <tr><td>Phenylketonuria</td><td>Usually PAH enzyme deficiency</td><td>Autosomal recessive</td><td>Phenylalanine accumulation</td></tr>
+          <tr><td>Colour vision deficiency</td><td>Altered cone photopigments</td><td>Depends on type</td><td>Difficulty distinguishing some colours</td></tr>
+          <tr><td>Thalassaemia</td><td>Reduced globin-chain production</td><td>Usually autosomal recessive</td><td>Anaemia</td></tr>
+          <tr><td>Cystic fibrosis</td><td>CFTR protein dysfunction</td><td>Autosomal recessive</td><td>Thick secretions affecting organs</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="gl-small">Note: Inheritance patterns are simplified for school-level revision. Specific variants and clinical severity can differ.</p>
+  </section>
+
+  <section class="gl-section">
+    <h2>4. Inheritance diagrams</h2>
+    <div class="gl-card">
+      <h3>A. Autosomal recessive inheritance</h3>
+      <p>When both parents are carriers (Aa × Aa), each pregnancy has the same possible outcomes.</p>
+      <div class="gl-flow" aria-label="Autosomal recessive inheritance diagram">
+        <div class="gl-node"><strong>Carrier parent × Carrier parent</strong><br>Aa × Aa</div>
+        <div class="gl-arrow" aria-hidden="true">↓</div>
+        <div class="gl-genotypes">
+          <div class="gl-genotype"><strong>AA</strong>25%<br><span class="gl-small">Unaffected, not a carrier</span></div>
+          <div class="gl-genotype"><strong>Aa</strong>25%<br><span class="gl-small">Carrier, usually unaffected</span></div>
+          <div class="gl-genotype"><strong>Aa</strong>25%<br><span class="gl-small">Carrier, usually unaffected</span></div>
+          <div class="gl-genotype"><strong>aa</strong>25%<br><span class="gl-small">Affected in this model</span></div>
+        </div>
+      </div>
+      <p class="gl-small">A = typical allele; a = disease-associated recessive allele in this simplified model. These are probabilities for each pregnancy, not predictions for a particular child.</p>
+    </div>
+    <div class="gl-card" style="margin-top:14px">
+      <h3>B. X-linked recessive inheritance</h3>
+      <p>Example: carrier mother (X<sup>N</sup>X<sup>n</sup>) and unaffected father (X<sup>N</sup>Y).</p>
+      <div class="gl-table-wrap">
+        <table>
+          <thead><tr><th>Possible child</th><th>Genotype</th><th>Interpretation</th></tr></thead>
+          <tbody>
+            <tr><td>Daughter</td><td>X<sup>N</sup>X<sup>N</sup></td><td>Unaffected, not a carrier</td></tr>
+            <tr><td>Daughter</td><td>X<sup>N</sup>X<sup>n</sup></td><td>Usually unaffected carrier</td></tr>
+            <tr><td>Son</td><td>X<sup>N</sup>Y</td><td>Unaffected</td></tr>
+            <tr><td>Son</td><td>X<sup>n</sup>Y</td><td>Affected</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="gl-small">For this specific pairing, each outcome has a 25% probability. Among sons, 50% are expected to be affected; among daughters, 50% are expected to be carriers.</p>
+    </div>
+  </section>
+
+  <section class="gl-section">
+    <h2>5. Memory aids</h2>
+    <div class="gl-grid">
+      <div class="gl-card gl-memory"><div class="gl-letter">H</div><div><h3>Haemophilia = Haemostasis</h3><p>Remember: VIII → A; IX → B; XI → C.</p></div></div>
+      <div class="gl-card gl-memory"><div class="gl-letter">S</div><div><h3>Sickle-cell = Shape change</h3><p>HBB on chromosome 11; glutamic acid is replaced by valine.</p></div></div>
+      <div class="gl-card gl-memory"><div class="gl-letter">P</div><div><h3>PKU = Phenylalanine problem</h3><p>PAH on chromosome 12; untreated accumulation can harm brain development.</p></div></div>
+      <div class="gl-card gl-memory"><div class="gl-letter">C</div><div><h3>Colour = Cone function</h3><p>Protan = red; deutan = green; tritan = blue-yellow.</p></div></div>
+      <div class="gl-card gl-memory"><div class="gl-letter">T</div><div><h3>Thalassaemia = Thalassaemic globin production</h3><p>Alpha genes: chromosome 16; beta-globin cluster: chromosome 11.</p></div></div>
+      <div class="gl-card gl-memory"><div class="gl-letter">CF</div><div><h3>Cystic fibrosis = CFTR</h3><p>Chromosome 7; thick secretions and sweat chloride are key clues.</p></div></div>
+    </div>
+  </section>
+
+  <section class="gl-section">
+    <h2>6. Board-exam model answer (8 marks)</h2>
+    <div class="gl-card">
+      <p><strong>Common genetic disorders:</strong> Genetic disorders are conditions associated with changes in genes or chromosomes. Single-gene disorders may follow autosomal or sex-linked inheritance. Examples include:</p>
+      <ol>
+        <li><strong>Haemophilia:</strong> A bleeding disorder caused by deficiency or dysfunction of clotting factors. Haemophilia A involves factor VIII and B involves factor IX; both are usually X-linked recessive.</li>
+        <li><strong>Sickle-cell disease:</strong> An autosomal recessive disorder associated with an HBB variant on chromosome 11. Glutamic acid is replaced by valine in the beta-globin chain, and red cells may become sickle-shaped.</li>
+        <li><strong>Phenylketonuria:</strong> Usually an autosomal recessive metabolic disorder caused by phenylalanine hydroxylase deficiency. Phenylalanine accumulation can damage brain development if untreated.</li>
+        <li><strong>Colour vision deficiency:</strong> Altered cone photopigments affect colour discrimination. Common red-green forms are usually X-linked recessive.</li>
+        <li><strong>Thalassaemia:</strong> Reduced production of alpha- or beta-globin chains can damage red blood cells and cause anaemia.</li>
+        <li><strong>Cystic fibrosis:</strong> An autosomal recessive disorder caused by CFTR gene variants on chromosome 7. Thick secretions can affect the lungs and pancreas.</li>
+      </ol>
+      <p><strong>Conclusion:</strong> Knowledge of genetic disorders helps explain inheritance and supports early diagnosis, appropriate care and genetic counselling.</p>
+    </div>
+    <div class="gl-callout"><strong>Exam tip:</strong> If a question asks for both Mendelian and chromosomal disorders, include chromosomal examples such as Down syndrome (trisomy 21) and Turner syndrome (45,X). They are not single-gene conditions.</div>
+  </section>
+
+  <section class="gl-section" id="gl-quiz-area">
+    <h2>7. Interactive quiz</h2>
+    <p class="gl-intro">Answer all 10 questions, then select <strong>Check my answers</strong> to see feedback and your score.</p>
+    <div class="gl-quiz">
+      <div><strong id="gl-progress-label">0 of 10 answered</strong><div class="gl-progress-shell"><div class="gl-progress" id="gl-progress"></div></div></div>
+      <form id="gl-quiz-form">
+        <div class="gl-question" data-answer="b" data-explain="Haemophilia A is associated with deficiency or dysfunction of clotting factor VIII. Factor IX is associated with haemophilia B.">
+          <div class="gl-qhead">1. Which clotting factor is deficient in haemophilia A?</div>
+          <label class="gl-option"><input type="radio" name="glq1" value="a"> Factor VII</label>
+          <label class="gl-option"><input type="radio" name="glq1" value="b"> Factor VIII</label>
+          <label class="gl-option"><input type="radio" name="glq1" value="c"> Factor IX</label>
+          <label class="gl-option"><input type="radio" name="glq1" value="d"> Factor XI</label><div class="gl-feedback" aria-live="polite"></div>
+        </div>
+        <div class="gl-question" data-answer="c" data-explain="Sickle-cell disease is associated with glutamic acid being replaced by valine at position 6 of the mature beta-globin chain.">
+          <div class="gl-qhead">2. Which amino-acid substitution is associated with sickle-cell disease?</div>
+          <label class="gl-option"><input type="radio" name="glq2" value="a"> Valine replaced by glutamic acid</label>
+          <label class="gl-option"><input type="radio" name="glq2" value="b"> Glycine replaced by alanine</label>
+          <label class="gl-option"><input type="radio" name="glq2" value="c"> Glutamic acid replaced by valine</label>
+          <label class="gl-option"><input type="radio" name="glq2" value="d"> Tyrosine replaced by phenylalanine</label><div class="gl-feedback" aria-live="polite"></div>
+        </div>
+        <div class="gl-question" data-answer="a" data-explain="Phenylalanine hydroxylase normally converts phenylalanine into tyrosine. Deficiency commonly causes PKU.">
+          <div class="gl-qhead">3. Phenylketonuria most commonly results from deficiency of which enzyme?</div>
+          <label class="gl-option"><input type="radio" name="glq3" value="a"> Phenylalanine hydroxylase</label>
+          <label class="gl-option"><input type="radio" name="glq3" value="b"> Lactase</label>
+          <label class="gl-option"><input type="radio" name="glq3" value="c"> Amylase</label>
+          <label class="gl-option"><input type="radio" name="glq3" value="d"> Pepsin</label><div class="gl-feedback" aria-live="polite"></div>
+        </div>
+        <div class="gl-question" data-answer="b" data-explain="The CFTR gene associated with cystic fibrosis is located on chromosome 7.">
+          <div class="gl-qhead">4. Which chromosome carries the CFTR gene?</div>
+          <label class="gl-option"><input type="radio" name="glq4" value="a"> Chromosome 16</label>
+          <label class="gl-option"><input type="radio" name="glq4" value="b"> Chromosome 7</label>
+          <label class="gl-option"><input type="radio" name="glq4" value="c"> Chromosome 11</label>
+          <label class="gl-option"><input type="radio" name="glq4" value="d"> Chromosome 4</label><div class="gl-feedback" aria-live="polite"></div>
+        </div>
+        <div class="gl-question" data-answer="d" data-explain="Thalassaemia involves reduced or absent production of alpha- or beta-globin chains and may cause anaemia.">
+          <div class="gl-qhead">5. Which statement best describes thalassaemia?</div>
+          <label class="gl-option"><input type="radio" name="glq5" value="a"> Failure of clotting factor production</label>
+          <label class="gl-option"><input type="radio" name="glq5" value="b"> Accumulation of phenylalanine</label>
+          <label class="gl-option"><input type="radio" name="glq5" value="c"> Defective chloride transport producing thick secretions</label>
+          <label class="gl-option"><input type="radio" name="glq5" value="d"> Reduced production of globin chains</label><div class="gl-feedback" aria-live="polite"></div>
+        </div>
+        <div class="gl-question" data-answer="a,c,d" data-explain="For Aa × Aa, the possible genotypes are AA, Aa, Aa and aa. AA is not a carrier, Aa is a carrier, and aa is affected in the simplified recessive model.">
+          <div class="gl-qhead">6. For two carrier parents (Aa × Aa), select all correct statements.</div>
+          <label class="gl-option"><input type="checkbox" name="glq6" value="a"> AA is unaffected and is not a carrier</label>
+          <label class="gl-option"><input type="checkbox" name="glq6" value="b"> Every child must be affected</label>
+          <label class="gl-option"><input type="checkbox" name="glq6" value="c"> Aa is usually an unaffected carrier</label>
+          <label class="gl-option"><input type="checkbox" name="glq6" value="d"> aa is affected in this model</label><div class="gl-feedback" aria-live="polite"></div>
+        </div>
+        <div class="gl-question" data-answer="c" data-explain="Tritan defects affect blue-yellow discrimination. Protan defects affect red perception and deutan defects affect green perception.">
+          <div class="gl-qhead">7. Which colour vision defect primarily affects blue-yellow discrimination?</div>
+          <label class="gl-option"><input type="radio" name="glq7" value="a"> Protan defect</label>
+          <label class="gl-option"><input type="radio" name="glq7" value="b"> Deutan defect</label>
+          <label class="gl-option"><input type="radio" name="glq7" value="c"> Tritan defect</label>
+          <label class="gl-option"><input type="radio" name="glq7" value="d"> Red-green defect</label><div class="gl-feedback" aria-live="polite"></div>
+        </div>
+        <div class="gl-question" data-answer="true" data-explain="The alpha-globin gene cluster is located on chromosome 16. The beta-globin gene cluster is on chromosome 11.">
+          <div class="gl-qhead">8. True or false: Alpha-globin genes are located on chromosome 16.</div>
+          <label class="gl-option"><input type="radio" name="glq8" value="true"> True</label>
+          <label class="gl-option"><input type="radio" name="glq8" value="false"> False</label><div class="gl-feedback" aria-live="polite"></div>
+        </div>
+        <div class="gl-question" data-answer="false" data-explain="Haemophilia C usually involves factor XI deficiency and is generally autosomal. Factor IX deficiency is associated with haemophilia B.">
+          <div class="gl-qhead">9. True or false: Haemophilia C is usually X-linked and caused by factor IX deficiency.</div>
+          <label class="gl-option"><input type="radio" name="glq9" value="true"> True</label>
+          <label class="gl-option"><input type="radio" name="glq9" value="false"> False</label><div class="gl-feedback" aria-live="polite"></div>
+        </div>
+        <div class="gl-question" data-answer="a" data-explain="Ishihara colour plates are commonly used to screen for red-green colour vision deficiency.">
+          <div class="gl-qhead">10. Which test is commonly used to screen for red-green colour vision deficiency?</div>
+          <label class="gl-option"><input type="radio" name="glq10" value="a"> Ishihara colour plates</label>
+          <label class="gl-option"><input type="radio" name="glq10" value="b"> Sweat chloride test</label>
+          <label class="gl-option"><input type="radio" name="glq10" value="c"> Newborn phenylalanine screening</label>
+          <label class="gl-option"><input type="radio" name="glq10" value="d"> Clotting-factor assay</label><div class="gl-feedback" aria-live="polite"></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:15px">
+          <button class="gl-btn" type="button" id="gl-check">Check my answers</button>
+          <button class="gl-btn gl-btn-secondary" type="button" id="gl-reset">Try again</button>
+        </div>
+      </form>
+      <div class="gl-result" id="gl-result" role="status" aria-live="polite"><div class="gl-small">YOUR RESULT</div><div class="gl-score" id="gl-score">0/10</div><p id="gl-result-message"></p><p id="gl-unanswered" class="gl-small"></p></div>
+      <noscript><p class="gl-callout">JavaScript is disabled or unavailable in this view. The notes and tables remain readable, but the automatic quiz scoring requires JavaScript.</p></noscript>
+    </div>
+  </section>
+
+  <section class="gl-section">
+    <h2>8. Final revision checklist</h2>
+    <div class="gl-card">
+      <ul class="gl-checklist">
+        <li>I can define a genetic disorder and distinguish gene disorders from chromosomal disorders.</li>
+        <li>I can explain the causes and inheritance patterns of all six disorders.</li>
+        <li>I can recall key genes and chromosome locations.</li>
+        <li>I can interpret autosomal recessive and X-linked recessive diagrams.</li>
+        <li>I can write a concise, scientifically accurate 8-mark answer.</li>
+      </ul>
+    </div>
+  </section>
+  <p class="gl-disclaimer">Educational resource for school-level Biology revision. It is not a diagnostic guide. Genetic conditions vary, and medical assessment should be provided by qualified health professionals.</p>
+
+  <script>
+  (function(){
+    var root=document.getElementById('genetics-learning-module');
+    if(!root || root.getAttribute('data-gl-ready')==='1') return;
+    root.setAttribute('data-gl-ready','1');
+    var form=root.querySelector('#gl-quiz-form');
+    var questions=Array.prototype.slice.call(root.querySelectorAll('.gl-question'));
+    var progress=root.querySelector('#gl-progress');
+    var progressLabel=root.querySelector('#gl-progress-label');
+    var result=root.querySelector('#gl-result');
+    var scoreEl=root.querySelector('#gl-score');
+    var messageEl=root.querySelector('#gl-result-message');
+    var unansweredEl=root.querySelector('#gl-unanswered');
+    function chosenValues(q){
+      return Array.prototype.slice.call(q.querySelectorAll('input:checked')).map(function(input){return input.value;}).sort();
+    }
+    function sameArray(a,b){return a.length===b.length && a.every(function(v,i){return v===b[i];});}
+    function updateProgress(){
+      var answered=questions.filter(function(q){return chosenValues(q).length>0;}).length;
+      progress.style.width=(answered/questions.length*100)+'%';
+      progressLabel.textContent=answered+' of '+questions.length+' answered';
+    }
+    form.addEventListener('change',function(){updateProgress();});
+    root.querySelector('#gl-check').addEventListener('click',function(){
+      var score=0,answered=0;
+      questions.forEach(function(q){
+        var selected=chosenValues(q);
+        var correct=q.getAttribute('data-answer').split(',').sort();
+        var feedback=q.querySelector('.gl-feedback');
+        if(selected.length) answered++;
+        var isCorrect=sameArray(selected,correct);
+        feedback.className='gl-feedback gl-show '+(isCorrect?'gl-good':'gl-bad');
+        feedback.textContent=(isCorrect?'Correct. ':'Review this answer. ')+q.getAttribute('data-explain');
+        if(isCorrect) score++;
+      });
+      scoreEl.textContent=score+'/'+questions.length;
+      var pct=Math.round(score/questions.length*100);
+      messageEl.textContent=pct>=80?'Strong revision. Review any missed items and practise writing the long answer.':pct>=50?'Good start. Revisit the comparison table and inheritance diagrams, then try again.':'Revisit the simplified notes and memory aids, then attempt the quiz again.';
+      unansweredEl.textContent=(questions.length-answered)+' question(s) were left unanswered. Unanswered questions are marked for review.';
+      result.classList.add('gl-show');
+      result.scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+    root.querySelector('#gl-reset').addEventListener('click',function(){
+      form.reset();
+      questions.forEach(function(q){var f=q.querySelector('.gl-feedback');f.className='gl-feedback';f.textContent='';});
+      result.classList.remove('gl-show');
+      updateProgress();
+      root.querySelector('#gl-quiz-area').scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    updateProgress();
+  })();
+  </script>
+</div>
+<!-- End Genetic Disorders Interactive Learning Module -->

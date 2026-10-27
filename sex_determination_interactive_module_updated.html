@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sex Determination — Interactive Board Exam Revision</title>
+<style>
+:root{--ink:#1c2b3a;--blue:#174a7e;--teal:#087e8b;--pale:#eef6fb;--gold:#f4c95d;--line:#d5e0e8}
+*{box-sizing:border-box}body{margin:0;background:#f3f6f9;color:var(--ink);font:16px/1.6 Arial,Helvetica,sans-serif}
+header{background:linear-gradient(120deg,#12345a,#087e8b);color:white;padding:30px 18px}.wrap{max-width:1000px;margin:auto;padding:0 16px}
+h1{margin:0 0 8px;font-size:clamp(1.8rem,4vw,2.7rem)}header p{margin:0;max-width:760px}nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}nav a{color:#12345a;background:white;text-decoration:none;padding:7px 11px;border-radius:20px;font-size:.9rem}
+main{max-width:1000px;margin:22px auto;padding:0 16px}section{background:white;border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0;box-shadow:0 3px 12px #1c2b3a0a}
+h2{color:var(--blue);margin-top:0}h3{color:var(--teal)}.tag{display:inline-block;background:#e3f3f4;color:#075e67;padding:3px 9px;border-radius:20px;font-size:.82rem;font-weight:bold}
+.key{background:#fff8df;border-left:5px solid var(--gold);padding:12px 14px;margin:12px 0}table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95rem}th,td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}th{background:var(--pale);color:#12345a}
+.diagram{background:#f8fbfd;border:1px dashed #9cb5c8;border-radius:10px;padding:15px;margin:12px 0;overflow-x:auto}.flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:9px;text-align:center}.node{background:white;border:2px solid #8bb7ca;border-radius:9px;padding:10px 13px;min-width:115px;font-weight:bold}.arrow{font-size:1.4rem;color:var(--teal)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}.card{border:1px solid var(--line);border-radius:10px;padding:14px;background:#fbfdff}.card h3{margin-top:0}
+label{display:block;font-weight:bold;margin:10px 0 5px}select,button{font:inherit;border-radius:8px;padding:9px 12px;border:1px solid #9bb1c2}select{max-width:100%;background:white}button{cursor:pointer;background:var(--blue);color:white;border-color:var(--blue);font-weight:bold}button.secondary{background:white;color:var(--blue)}
+.result{background:#eaf7f2;border:1px solid #a5d6c4;border-radius:8px;padding:12px;margin-top:12px;min-height:48px}.quiz-item{padding:14px 0;border-bottom:1px solid var(--line)}.quiz-item:last-child{border-bottom:0}.quiz-item p{font-weight:bold;margin:0 0 8px}.quiz-item label{font-weight:normal;margin:5px 0}.feedback{display:none;margin-top:8px;padding:10px;border-radius:8px}.small{font-size:.9rem;color:#506273}footer{text-align:center;padding:25px;color:#5b6b79}
+@media(max-width:600px){section{padding:15px}table{font-size:.86rem}th,td{padding:7px}}
+</style></head><body>
+<header><div class="wrap"><span class="tag">BIOLOGY • BOARD-EXAM REVISION</span><h1>Sex Determination</h1>
+<p>An interactive learning module on chromosomal mechanisms of sex determination, with simplified notes, comparison tables, diagrams, memory aids and a self-check quiz.</p>
+<nav><a href="#notes">Quick notes</a><a href="#systems">Compare systems</a><a href="#diagrams">Diagrams</a><a href="#explore">Explore outcomes</a><a href="#quiz">Quiz</a><a href="#board-answer">Board answer</a><a href="#simulation-lab">Simulations</a></nav></div></header>
+<main>
+<section id="notes"><h2>1. Simplified notes</h2>
+<p><b>Sex determination</b> is the biological mechanism by which an organism develops as male, female, or another sex category, depending on the species. In many animals, sex is associated with the combination of sex chromosomes inherited from the parents.</p>
+<div class="key"><b>Important:</b> Chromosomal sex determination differs among species. Not all organisms use the same system, and some species use environmental or other mechanisms.</div>
+<h3>Key terms</h3><ul>
+<li><b>Sex chromosomes:</b> chromosomes involved in sex determination, such as X and Y in humans or Z and W in birds.</li>
+<li><b>Autosomes:</b> chromosomes other than the sex chromosomes.</li><li><b>Homogametic sex:</b> produces one type of sex-chromosome gamete (for example, XX in humans usually produces X-bearing ova).</li>
+<li><b>Heterogametic sex:</b> produces two types of sex-chromosome gametes (for example, XY in humans produces X-bearing and Y-bearing sperm).</li><li><b>Gametes:</b> reproductive cells—sperm and ova in humans.</li></ul>
+<h3>Human XX–XY system</h3><p>Typically, human females have XX sex chromosomes and males have XY. An ovum normally carries an X chromosome. Sperm carry either X or Y. An X-bearing sperm usually produces an XX embryo; a Y-bearing sperm usually produces an XY embryo. The SRY gene on a typical Y chromosome is a major trigger for testis development, but biological sex development involves additional genes and pathways.</p>
+<div class="key"><b>Scientific wording:</b> In humans, the sperm usually determines whether the fertilized egg receives an X or Y chromosome. This describes the typical XX–XY pattern, not every variation in sex development.</div>
+<h3>XX–XO system</h3><p>In this system, females are XX and males have a single X chromosome, written XO (the “O” means that a second sex chromosome is absent). It occurs in many grasshoppers and some other insects. Females produce X-bearing eggs; males produce sperm carrying either X or no sex chromosome. Fertilization by an X-bearing sperm typically gives XX offspring; fertilization by a sperm without a sex chromosome typically gives XO offspring.</p>
+<h3>Female heterogamety: ZW–ZZ and ZO–ZZ</h3><p>In the common <b>ZW–ZZ system</b>, females are ZW and males are ZZ. Females produce Z-bearing or W-bearing eggs; males produce Z-bearing sperm. In birds, a Z-bearing egg typically produces ZZ offspring (male), while a W-bearing egg typically produces ZW offspring (female).</p>
+<p>Some moths have a <b>ZO–ZZ system</b>: females are ZO and males ZZ. The female produces Z-bearing or chromosome-free eggs, while the male produces Z-bearing sperm. In this system, the egg contributes the difference.</p></section>
+
+<section id="board-answer">
+<h2>Board-exam answer: Sex Determination</h2>
+<p><b>Sex determination</b> is the process by which the sex of an individual is determined. There are two main types of chromosomal sex determination.</p>
+<h3>I. Male Heterogametic Method</h3>
+<p>In this method, the male produces two types of gametes, while the female produces one type.</p>
+<h3>1. XX–XO Type</h3>
+<ol>
+<li>It is found in grasshoppers and some insects.</li>
+<li>Females have <b>XX</b> chromosomes, while males have <b>XO</b> chromosomes.</li>
+<li>The female is homogametic, and the male is heterogametic.</li>
+<li>The female produces X-bearing eggs. The male produces X-bearing and O-type sperm.</li>
+<li>X egg + X sperm → <b>XX (female)</b>.</li>
+<li>X egg + O sperm → <b>XO (male)</b>.</li>
+</ol>
+<h3>2. XX–XY Type</h3>
+<ol>
+<li>It is found in human beings and many other mammals.</li>
+<li>Females have <b>XX</b> chromosomes, while males have <b>XY</b> chromosomes.</li>
+<li>The female is homogametic, and the male is heterogametic.</li>
+<li>The female produces X-bearing eggs. The male produces X-bearing and Y-bearing sperm.</li>
+<li>X egg + X sperm → <b>XX (typically female)</b>.</li>
+<li>X egg + Y sperm → <b>XY (typically male)</b>.</li>
+</ol>
+<h3>II. Female Heterogametic Method</h3>
+<p>In this method, the female produces two types of gametes, while the male produces one type.</p>
+<h3>1. ZO–ZZ Type</h3>
+<ol>
+<li>It is found in some moths.</li>
+<li>Females have <b>ZO</b> chromosomes, while males have <b>ZZ</b> chromosomes.</li>
+<li>The female is heterogametic, and the male is homogametic.</li>
+<li>The female produces Z-bearing and O-type eggs. The male produces only Z-bearing sperm.</li>
+<li>Z egg + Z sperm → <b>ZZ (male)</b>.</li>
+<li>O egg + Z sperm → <b>ZO (female)</b>.</li>
+</ol>
+<h3>2. ZW–ZZ Type</h3>
+<ol>
+<li>It is found in birds and some other animals.</li>
+<li>Females have <b>ZW</b> chromosomes, while males have <b>ZZ</b> chromosomes.</li>
+<li>The female is heterogametic, and the male is homogametic.</li>
+<li>The female produces Z-bearing and W-bearing eggs. The male produces only Z-bearing sperm.</li>
+<li>Z egg + Z sperm → <b>ZZ (male)</b>.</li>
+<li>W egg + Z sperm → <b>ZW (female)</b>.</li>
+</ol>
+<p><b>Conclusion:</b> In male heterogamety, the male produces two types of sex-chromosome gametes. In female heterogamety, the female produces two types.</p>
+<div class="key"><b>Quick memory aid:</b> XX–XO = grasshopper; XX–XY = humans; ZO–ZZ = some moths; ZW–ZZ = birds.</div>
+</section>
+
+<section id="simulation-lab">
+<h2>Interactive simulation lab: Try all four systems</h2>
+<p>Select a system, then choose the gamete from each parent. The simulation shows the resulting chromosome combination and typical sex. Use it to practise how the four systems differ.</p>
+<label for="simSystem">Sex-determination system</label>
+<select id="simSystem" onchange="updateSimulationOptions()">
+<option value="xy">XX–XY (human pattern)</option>
+<option value="xo">XX–XO (grasshopper pattern)</option>
+<option value="zw">ZW–ZZ (bird pattern)</option>
+<option value="zo">ZO–ZZ (some moths)</option>
+</select>
+<div class="grid">
+<div class="card"><label id="eggLabel" for="eggChoice">Egg / ovum</label><select id="eggChoice"></select></div>
+<div class="card"><label id="spermLabel" for="spermChoice">Sperm</label><select id="spermChoice"></select></div>
+</div>
+<p><button type="button" onclick="runSimulation()">Combine gametes</button> <button type="button" class="secondary" onclick="showAllOutcomes()">Show all possible outcomes</button></p>
+<div id="simResult" class="result" aria-live="polite">Choose gametes and select “Combine gametes”.</div>
+<div id="allOutcomes" class="result" aria-live="polite" style="display:none"></div>
+<p class="small">The simulation illustrates simplified textbook chromosome patterns. “O” means that the gamete has no sex chromosome of that pair. Biological sex development may be more complex in some species and individuals.</p>
+</section>
+
+<section id="systems"><h2>2. Comparison table</h2><table><thead><tr><th>Feature</th><th>XX–XO</th><th>XX–XY</th><th>ZW–ZZ</th><th>ZO–ZZ</th></tr></thead><tbody>
+<tr><td>Typical example</td><td>Many grasshoppers</td><td>Humans; many other mammals</td><td>Birds; many butterflies and moths</td><td>Some moths</td></tr>
+<tr><td>Female sex chromosomes</td><td>XX</td><td>XX</td><td>ZW</td><td>ZO</td></tr><tr><td>Male sex chromosomes</td><td>XO</td><td>XY</td><td>ZZ</td><td>ZZ</td></tr>
+<tr><td>Heterogametic sex</td><td>Male</td><td>Male</td><td>Female</td><td>Female</td></tr><tr><td>Two gamete types</td><td>Male: X or O</td><td>Male: X or Y sperm</td><td>Female: Z or W eggs</td><td>Female: Z or O eggs</td></tr>
+<tr><td>What usually determines the chromosomal pattern?</td><td>Which sperm fertilizes the egg</td><td>Whether sperm carries X or Y</td><td>Whether egg carries Z or W</td><td>Whether egg carries Z or no sex chromosome</td></tr>
+</tbody></table><p class="small">The table describes common textbook patterns. Actual sex determination and development can be more complex, and mechanisms vary across species.</p></section>
+<section id="diagrams"><h2>3. Diagrams to remember</h2><h3>A. Human XX–XY system</h3><div class="diagram"><div class="flow"><div class="node">Mother: XX<br><small>ova: X</small></div><div class="arrow">+</div><div class="node">Father: XY<br><small>sperm: X or Y</small></div></div><div class="flow" style="margin-top:12px"><div class="arrow">↓</div></div><div class="grid"><div class="card"><b>X ovum + X sperm</b><p>XX — typical female chromosomal pattern</p><span class="tag">About 50%</span></div><div class="card"><b>X ovum + Y sperm</b><p>XY — typical male chromosomal pattern</p><span class="tag">About 50%</span></div></div><p class="small">The percentages are expected probabilities across many conceptions, not a guarantee for each pregnancy.</p></div>
+<h3>B. XX–XO system</h3><div class="diagram"><div class="flow"><div class="node">Female XX<br>eggs: X</div><div class="arrow">+</div><div class="node">Male XO<br>sperm: X or O</div></div><div class="grid" style="margin-top:12px"><div class="card">X egg + X sperm → <b>XX</b> (typically female)</div><div class="card">X egg + O sperm → <b>XO</b> (typically male)</div></div></div>
+<h3>C. ZW–ZZ system in birds</h3><div class="diagram"><div class="flow"><div class="node">Female ZW<br>eggs: Z or W</div><div class="arrow">+</div><div class="node">Male ZZ<br>sperm: Z</div></div><div class="grid" style="margin-top:12px"><div class="card">Z egg + Z sperm → <b>ZZ</b> (typically male)</div><div class="card">W egg + Z sperm → <b>ZW</b> (typically female)</div></div></div></section>
+<section id="explore"><h2>4. Explore the outcomes</h2><p>Choose a system to reveal the possible combinations. Use the result to explain which parent is heterogametic.</p><label for="system">Choose a chromosome system</label><select id="system"><option value="xy">Human XX–XY</option><option value="xo">XX–XO (grasshopper pattern)</option><option value="zw">ZW–ZZ (bird pattern)</option><option value="zo">ZO–ZZ (some moths)</option></select> <button onclick="showSystem()">Show outcome</button><div id="systemResult" class="result" aria-live="polite">Select a system and choose “Show outcome”.</div></section>
+<section id="memory"><h2>5. Memory aids</h2><div class="grid"><div class="card"><h3>“XY: male varies”</h3><p>In the typical human system, the mother contributes X; the father contributes X or Y.</p></div><div class="card"><h3>“XO: O means one X”</h3><p>XO means one X sex chromosome and no second sex chromosome.</p></div><div class="card"><h3>“ZW: W is in the female”</h3><p>In the common bird system, female = ZW and male = ZZ.</p></div><div class="card"><h3>Homo = one; hetero = two</h3><p>Homogametic: one type of sex-chromosome gamete. Heterogametic: two types.</p></div></div><div class="key"><b>Exam caution:</b> “Male determines sex” is not a universal rule. In XX–XY and XX–XO systems, the male is heterogametic. In ZW–ZZ and ZO–ZZ systems, the female is heterogametic.</div></section>
+<section id="quiz"><h2>6. Self-check quiz</h2><p>Choose your answer, then select <b>Check answers</b> to see feedback and your score.</p><form id="quizForm">
+<div class="quiz-item"><p>1. Which sex-chromosome combination is typical of human females?</p><label><input type="radio" name="q1" value="a"> XX</label><label><input type="radio" name="q1" value="b"> XY</label><label><input type="radio" name="q1" value="c"> XO</label><label><input type="radio" name="q1" value="d"> ZZ</label><div class="feedback" id="f1"></div></div>
+<div class="quiz-item"><p>2. In the typical human XX–XY system, which parent is heterogametic?</p><label><input type="radio" name="q2" value="a"> Mother</label><label><input type="radio" name="q2" value="b"> Father</label><label><input type="radio" name="q2" value="c"> Both parents</label><label><input type="radio" name="q2" value="d"> Neither parent</label><div class="feedback" id="f2"></div></div>
+<div class="quiz-item"><p>3. In many grasshoppers using XX–XO, what does “O” indicate?</p><label><input type="radio" name="q3" value="a"> An extra X chromosome</label><label><input type="radio" name="q3" value="b"> A Y chromosome</label><label><input type="radio" name="q3" value="c"> Absence of a second sex chromosome</label><label><input type="radio" name="q3" value="d"> Two Z chromosomes</label><div class="feedback" id="f3"></div></div>
+<div class="quiz-item"><p>4. In the common bird ZW–ZZ system, which combination is typically female?</p><label><input type="radio" name="q4" value="a"> ZZ</label><label><input type="radio" name="q4" value="b"> ZW</label><label><input type="radio" name="q4" value="c"> XX</label><label><input type="radio" name="q4" value="d"> XO</label><div class="feedback" id="f4"></div></div>
+<div class="quiz-item"><p>5. Which statement correctly describes heterogamety?</p><label><input type="radio" name="q5" value="a"> The individual produces only one type of sex-chromosome gamete</label><label><input type="radio" name="q5" value="b"> The individual produces two types of sex-chromosome gametes</label><label><input type="radio" name="q5" value="c"> The individual has no sex chromosomes</label><label><input type="radio" name="q5" value="d"> The individual always produces offspring of one sex</label><div class="feedback" id="f5"></div></div>
+<div class="quiz-item"><p>6. In the ZW–ZZ system, which parent is heterogametic?</p><label><input type="radio" name="q6" value="a"> Male</label><label><input type="radio" name="q6" value="b"> Female</label><label><input type="radio" name="q6" value="c"> Both are always heterogametic</label><label><input type="radio" name="q6" value="d"> Neither is heterogametic</label><div class="feedback" id="f6"></div></div>
+<div class="quiz-item"><p>7. True or false: all animal species use the human XX–XY system.</p><label><input type="radio" name="q7" value="true"> True</label><label><input type="radio" name="q7" value="false"> False</label><div class="feedback" id="f7"></div></div>
+<div class="quiz-item"><p>8. True or false: in the typical human XX–XY pattern, an X-bearing sperm fertilizing an X-bearing ovum produces an XX embryo.</p><label><input type="radio" name="q8" value="true"> True</label><label><input type="radio" name="q8" value="false"> False</label><div class="feedback" id="f8"></div></div>
+<button type="button" onclick="checkQuiz()">Check answers</button> <button type="reset" class="secondary" onclick="setTimeout(resetQuiz,0)">Reset quiz</button><div id="score" class="result" aria-live="polite">Your score will appear here.</div></form></section>
+<section><h2>7. Board-exam answer framework</h2><ol><li>Define sex determination.</li><li>State the two broad chromosomal patterns: male heterogamety and female heterogamety.</li><li>Explain XX–XO and XX–XY with examples and gametes.</li><li>Explain ZW–ZZ and, if required by the syllabus, ZO–ZZ.</li><li>Draw a simple gamete-combination diagram and state the typical offspring combinations.</li><li>Conclude that different organisms have different sex-determination mechanisms.</li></ol><p class="small">For examination diagrams, label parental chromosome combinations, gamete types, and offspring combinations clearly. Follow the terminology prescribed in your current syllabus.</p></section>
+</main><footer>Interactive Biology Revision Resource • Sex Determination</footer>
+<script>
+function showSystem(){const s=document.getElementById('system').value,out=document.getElementById('systemResult');const data={
+xy:'<b>Human XX–XY:</b> Mother XX produces X-bearing ova. Father XY produces X-bearing or Y-bearing sperm. X + X → XX (typically female); X + Y → XY (typically male). The father is heterogametic.',
+xo:'<b>XX–XO:</b> Female XX produces X-bearing eggs. Male XO produces sperm carrying X or no sex chromosome (O). X + X → XX (typically female); X + O → XO (typically male). The male is heterogametic.',
+zw:'<b>Bird ZW–ZZ:</b> Female ZW produces Z-bearing or W-bearing eggs. Male ZZ produces Z-bearing sperm. Z + Z → ZZ (typically male); W + Z → ZW (typically female). The female is heterogametic.',
+zo:'<b>ZO–ZZ:</b> Female ZO produces Z-bearing or chromosome-free eggs. Male ZZ produces Z-bearing sperm. Z + Z → ZZ (typically male); O + Z → ZO (typically female in this system). The female is heterogametic.'};out.innerHTML=data[s];}
+const answers={q1:['a','XX is the typical sex-chromosome combination in human females.'],q2:['b','The father is heterogametic because he produces X-bearing and Y-bearing sperm.'],q3:['c','O indicates that the second sex chromosome is absent; XO individuals have one X sex chromosome.'],q4:['b','In the common bird system, females are ZW and males are ZZ.'],q5:['b','A heterogametic individual produces two types of gametes with respect to sex chromosomes.'],q6:['b','In the ZW–ZZ system, females produce Z-bearing and W-bearing eggs, so females are heterogametic.'],q7:['false','False. Different species use different systems, including XX–XO, XX–XY, ZW–ZZ, and other mechanisms.'],q8:['true','True. The X chromosome from the ovum and the X chromosome from the sperm form the typical XX combination.']};
+function checkQuiz(){let score=0,answered=0;Object.keys(answers).forEach(q=>{const chosen=document.querySelector('input[name="'+q+'"]:checked'),fb=document.getElementById('f'+q.slice(1));fb.style.display='block';if(!chosen){fb.innerHTML='<b>Not answered.</b> '+answers[q][1];fb.style.background='#fff4dd';return;}answered++;const ok=chosen.value===answers[q][0];if(ok)score++;fb.style.background=ok?'#eaf7f2':'#fff0ed';fb.innerHTML='<b>'+(ok?'Correct. ':'Review. ')+'</b>'+answers[q][1];});document.getElementById('score').innerHTML='<b>Score: '+score+' / 8</b> ('+answered+' answered). '+(score===8?'Excellent mastery.':score>=6?'Good revision. Review any explanations above.':'Review the notes and diagrams, then try again.');}
+function resetQuiz(){document.querySelectorAll('.feedback').forEach(x=>{x.style.display='none';x.innerHTML='';});document.getElementById('score').textContent='Your score will appear here.';}
+
+const simData={
+ xy:{eggLabel:'Mother’s egg (XX)',spermLabel:'Father’s sperm (XY)',eggs:[['X','X-bearing egg']],sperms:[['X','X-bearing sperm'],['Y','Y-bearing sperm']],outcomes:[['X','X','XX','Typically female'],['X','Y','XY','Typically male']]},
+ xo:{eggLabel:'Female’s egg (XX)',spermLabel:'Male’s sperm (XO)',eggs:[['X','X-bearing egg']],sperms:[['X','X-bearing sperm'],['O','No sex chromosome (O)']],outcomes:[['X','X','XX','Typically female'],['X','O','XO','Typically male']]},
+ zw:{eggLabel:'Female bird’s egg (ZW)',spermLabel:'Male bird’s sperm (ZZ)',eggs:[['Z','Z-bearing egg'],['W','W-bearing egg']],sperms:[['Z','Z-bearing sperm']],outcomes:[['Z','Z','ZZ','Typically male'],['W','Z','ZW','Typically female']]},
+ zo:{eggLabel:'Female moth’s egg (ZO)',spermLabel:'Male moth’s sperm (ZZ)',eggs:[['Z','Z-bearing egg'],['O','No sex chromosome (O)']],sperms:[['Z','Z-bearing sperm']],outcomes:[['Z','Z','ZZ','Typically male'],['O','Z','ZO','Typically female in this system']]}
+};
+function updateSimulationOptions(){
+ const key=document.getElementById('simSystem').value,d=simData[key],egg=document.getElementById('eggChoice'),sperm=document.getElementById('spermChoice');
+ document.getElementById('eggLabel').textContent=d.eggLabel;document.getElementById('spermLabel').textContent=d.spermLabel;
+ egg.innerHTML=d.eggs.map(x=>'<option value="'+x[0]+'">'+x[1]+'</option>').join('');
+ sperm.innerHTML=d.sperms.map(x=>'<option value="'+x[0]+'">'+x[1]+'</option>').join('');
+ document.getElementById('simResult').textContent='Choose gametes and select “Combine gametes”.';
+ document.getElementById('allOutcomes').style.display='none';
+}
+function runSimulation(){
+ const key=document.getElementById('simSystem').value,d=simData[key],e=document.getElementById('eggChoice').value,s=document.getElementById('spermChoice').value;
+ const match=d.outcomes.find(x=>x[0]===e&&x[1]===s);
+ if(!match){document.getElementById('simResult').textContent='That combination is not part of this simplified system.';return;}
+ document.getElementById('simResult').innerHTML='<b>Result: '+match[2]+' — '+match[3]+'.</b><br>Egg contributes '+e+'; sperm contributes '+s+'.';
+ document.getElementById('allOutcomes').style.display='none';
+}
+function showAllOutcomes(){
+ const d=simData[document.getElementById('simSystem').value];
+ document.getElementById('allOutcomes').innerHTML='<b>All typical outcomes</b><ul>'+d.outcomes.map(x=>'<li>'+x[0]+' egg + '+x[1]+' sperm → <b>'+x[2]+'</b> ('+x[3]+')</li>').join('')+'</ul>';
+ document.getElementById('allOutcomes').style.display='block';
+}
+document.addEventListener('DOMContentLoaded',updateSimulationOptions);
+
+</script></body></html>
